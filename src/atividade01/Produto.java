@@ -6,7 +6,6 @@ public class Produto {
     String descricao;
     double precoCusto;
     int qtdeEmEstoque = 0;
-    Scanner input = new Scanner(System.in);
 
     int aumentarEstoque(int aumentoQtde) {
         qtdeEmEstoque = qtdeEmEstoque + aumentoQtde;
@@ -16,11 +15,12 @@ public class Produto {
     int baixarEstoque(int baixarQtde) {
 
         if (baixarQtde > qtdeEmEstoque) {
-            qtdeEmEstoque = qtdeEmEstoque - baixarQtde;
+           return - 1;
         } else {
-            System.out.println("Quantidade acima do possuido!");
+            qtdeEmEstoque = qtdeEmEstoque - baixarQtde;
+            return qtdeEmEstoque;   
         }
-        return qtdeEmEstoque;
+       
     }
 
      double calcularValorEstoque() {
