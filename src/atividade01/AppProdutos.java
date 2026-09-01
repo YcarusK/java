@@ -38,7 +38,6 @@ public class AppProdutos {
 
                 case 2:
                     System.out.println("Defina um valor para a diminuição: ");
-                    
                     int baixarQtde = input.nextInt();
                     int resultado = p.baixarEstoque(baixarQtde);
 
