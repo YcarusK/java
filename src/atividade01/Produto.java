@@ -4,7 +4,7 @@ public class Produto {
     int codigo;
     String descricao;
     double precoCusto;
-    int qtdeEmEstoque = 0;
+    int qtdeEmEstoque;
 
     int aumentarEstoque(int aumentoQtde) {
         qtdeEmEstoque = qtdeEmEstoque + aumentoQtde;

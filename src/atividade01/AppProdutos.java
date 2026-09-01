@@ -33,17 +33,28 @@ public class AppProdutos {
                     System.out.println("Defina um valor para o aumento: ");
                     int aumentoQtde = input.nextInt();
                     p.aumentarEstoque(aumentoQtde);
+                    System.out.println("O valor atual do estoque é " + p.qtdeEmEstoque);
                     break;
 
                 case 2:
                     System.out.println("Defina um valor para a diminuição: ");
                     int baixarQtde = input.nextInt();
-                    p.baixarEstoque(baixarQtde);
+                    
+                    int resultado = p.baixarEstoque(baixarQtde);
+
+                    if(resultado == -1){
+                        System.out.println("Estoque insuficiênte");
+                        System.out.println("O valor atual do estoque é " + p.qtdeEmEstoque);
+                    }
+
+                    else{
+                    System.out.println("O valor atual do estoque é " + p.qtdeEmEstoque);
+                    }
                     break;
 
                 case 3:
                     System.out.println("Verificando...");
-                    System.out.println("O valor do estoque atual é" + p.calcularValorEstoque());
+                    System.out.println("O valor do estoque atual é " + p.calcularValorEstoque());
                     break;
 
                 case 4:
@@ -55,9 +66,7 @@ public class AppProdutos {
                     System.out.println("Opção indisponivel");
                     break;
             }
-            input.close();
         }
-
-
+        input.close();
     }
 }
